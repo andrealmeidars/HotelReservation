@@ -8,4 +8,11 @@ public class Hotel {
     private int dailyRatePremiumClientWeek;
     private int dailyRatePremiumClientWeekend;
 
+
+
+
+
+
+
+
 }
