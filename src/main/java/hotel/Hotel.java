@@ -1,12 +1,14 @@
 package hotel;
 
+import model.*;
+
 public class Hotel {
-    private  String hotelName;
-    private int classificationHotelValue;
-    private int dailyRateRegularClientWeek;
-    private int dailyRateRegularClientWeekend;
-    private int dailyRatePremiumClientWeek;
-    private int dailyRatePremiumClientWeekend;
+    private HotelName hotelName;
+    private ClassificationHotelValue classificationHotelValue;
+    private DailyRateRegularClientWeek dailyRateRegularClientWeek;
+    private DailyRateRegularClientWeekend dailyRateRegularClientWeekend;
+    private DailyRatePremiumClientWeek dailyRatePremiumClientWeek;
+    private DailyRatePremiumClientWeekend dailyRatePremiumClientWeekend;
 
 
 
