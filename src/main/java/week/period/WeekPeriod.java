@@ -9,10 +9,14 @@ public class WeekPeriod {
 
     public String returnWeekPeriod(String day){
 
+        for (String value : week) {
+            if (value.equals(day)) {
+                return "week";
+            }
 
+        }
 
-
-        return "weekend";
+    return "weekend";
 
     }
 
