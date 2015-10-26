@@ -1,12 +1,9 @@
 package calculate.daily;
 
 
-
-
-
 public class HostingHotelCalculate {
 
-    public String dailyCalculate(String clientType, String day1, String day2, String day3){
+    public String calculateHotels(String clientType, String day1, String day2, String day3){
 
 
 
