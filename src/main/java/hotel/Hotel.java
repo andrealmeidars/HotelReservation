@@ -53,10 +53,17 @@ public class Hotel {
 
         double hostingValue = 0;
 
+
+
             if (customerType.equals("Regular")) {
                 if (weekPeriod.returnWeekPeriod(day1).equals("week")){
                     hostingValue = getDailyRegularHotelWeekValue();
+                }else if (weekPeriod.returnWeekPeriod(day1).equals("weekend")){
+                    hostingValue = getDailyRegularHotelWeekendValue();
                 }
+
+
+
 
           }else if (customerType.equals("Premium")) {
                 if (weekPeriod.returnWeekPeriod(day1).equals("week")){
