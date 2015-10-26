@@ -1,12 +1,13 @@
 package model;
 
 
-public class DailyRegularHotelValues {
+public class DailyRegularHotelValue {
     private double dailyRegularClientWeekValue;
     private double dailyRegularClientWeekendValue;
 
-    public DailyRegularHotelValues(double dailyRegularClientWeekValue) {
+    public DailyRegularHotelValue(double dailyRegularClientWeekValue, double dailyRegularClientWeekendValue) {
         this.dailyRegularClientWeekValue = dailyRegularClientWeekValue;
+        this.dailyRegularClientWeekendValue = dailyRegularClientWeekendValue;
     }
 
     public double getDailyRegularClientWeekValue() {
