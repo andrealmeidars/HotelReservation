@@ -23,5 +23,10 @@ public class DailyCalculateHotelTest {
         assertThat(dailyCalculateHotel.dailyCalculate("Regular","mon","tues", "wed"), is ("Lakewood"));
     }
 
+    @Test
+    public void showBridgewoodIfSendRegularTypeAnd1WeekDayAndWeekend(){
+        assertThat(dailyCalculateHotel.dailyCalculate("Regular","fri","sat", "sun"), is("Bridgewood"));
+    }
+
 
 }
