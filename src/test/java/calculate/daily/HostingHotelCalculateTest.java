@@ -18,15 +18,8 @@ public class HostingHotelCalculateTest {
 
     }
 
-    @Test
-    public void showLakewoodIfSendRegularTypeAnd3WeekDays(){
-        assertThat(hostingHotelCalculate.calculateHostingHotels("Regular", "mon", "tues", "wed"), is ("Lakewood"));
-    }
 
-    @Test
-    public void showBridgewoodIfSendRegularTypeAnd1WeekDayAndWeekend(){
-        assertThat(hostingHotelCalculate.calculateHostingHotels("Regular", "fri", "sat", "sun"), is("Bridgewood"));
-    }
+
 
 
 }
