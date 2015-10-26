@@ -23,11 +23,12 @@ public class HotelTest {
                                 new DailyPremiumHotelValue(90,80));
         }
 
+
+
     @Test
-    public void showNameHotel(){
-        assertThat(myHotel.calculateHostingValue("Regular", "mon", "tues", "wed"), is("My Hotel Resort Viamão") );
+    public void showHostinValueIfClientIsRegularAndInMonday(){
+        assertThat(myHotel.calculateHostingValue("Regular", "mon", "tues", "wed"), is(110.0) );
 
     }
-
 
 }

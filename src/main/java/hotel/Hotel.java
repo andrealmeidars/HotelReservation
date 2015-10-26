@@ -1,12 +1,14 @@
 package hotel;
 
 import model.*;
+import week.period.WeekPeriod;
 
 public class Hotel {
     private HotelName hotelName;
     private ClassificationHotelValue classificationHotelValue;
     private DailyRegularHotelValue dailyRegularHotelValue;
     private DailyPremiumHotelValue dailyPremiumHotelValue;
+    private WeekPeriod weekPeriod;
 
 
     public Hotel(HotelName hotelName, ClassificationHotelValue classificationHotelValue,
@@ -15,6 +17,7 @@ public class Hotel {
         this.classificationHotelValue = classificationHotelValue;
         this.dailyRegularHotelValue = dailyRegularHotelValue;
         this.dailyPremiumHotelValue = dailyPremiumHotelValue;
+        this.weekPeriod = new WeekPeriod();
     }
 
 
@@ -45,14 +48,17 @@ public class Hotel {
     }
 
 
-    public String calculateHostingValue(String customerType, String day1, String day2, String day3){
+    public double calculateHostingValue(String customerType, String day1, String day2, String day3){
 
-        double hostingValue;
+
+        double hostingValue = 0;
 
             if (customerType.equals("Regular")) {
-               // hostingValue =
-        }
+                if (weekPeriod.returnWeekPeriod(day1).equals("week")){
+                    hostingValue = getDailyRegularHotelWeekValue();
+                }
+          }
 
-         return getHotelName();
+         return hostingValue;
     }
 }
