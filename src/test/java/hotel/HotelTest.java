@@ -31,4 +31,10 @@ public class HotelTest {
 
     }
 
+    @Test
+    public void showHostinValueIfClientIsPremiumAndInMonday(){
+        assertThat(myHotel.calculateHostingValue("Premium", "mon", "tues", "wed"), is(90.0) );
+
+    }
+
 }

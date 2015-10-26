@@ -57,7 +57,14 @@ public class Hotel {
                 if (weekPeriod.returnWeekPeriod(day1).equals("week")){
                     hostingValue = getDailyRegularHotelWeekValue();
                 }
-          }
+
+          }else if (customerType.equals("Premium")) {
+                if (weekPeriod.returnWeekPeriod(day1).equals("week")){
+                    hostingValue = getDailyPremiumHotelWeekValue();
+                }
+            }
+
+
 
          return hostingValue;
     }
