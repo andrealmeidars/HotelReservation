@@ -60,15 +60,18 @@ public class Hotel {
             if (customerType.equals("Regular")) {
                 if (weekPeriod.returnWeekPeriod(hostingDay).equals("week")) {
                     hostingValue =  hostingValue + getDailyRegularHotelWeekValue();
-                } else if (weekPeriod.returnWeekPeriod(day1).equals("weekend")) {
-                    hostingValue = getDailyRegularHotelWeekendValue();
+                } else if (weekPeriod.returnWeekPeriod(hostingDay).equals("weekend")) {
+                    hostingValue =  hostingValue + getDailyRegularHotelWeekendValue();
                 }
 
 
             } else if (customerType.equals("Premium")) {
                 if (weekPeriod.returnWeekPeriod(hostingDay).equals("week")) {
-                    hostingValue = getDailyPremiumHotelWeekValue();
+                    hostingValue =  hostingValue + getDailyPremiumHotelWeekValue();
+                }else if (weekPeriod.returnWeekPeriod(hostingDay).equals("weekend")) {
+                    hostingValue =  hostingValue + getDailyPremiumHotelWeekendValue();
                 }
+
             }
         }
 

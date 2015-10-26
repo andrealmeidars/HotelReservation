@@ -1,6 +1,6 @@
 package hotel;
 
-import junit.framework.TestCase;
+
 import model.ClassificationHotelValue;
 import model.DailyPremiumHotelValue;
 import model.DailyRegularHotelValue;
@@ -26,10 +26,29 @@ public class HotelTest {
 
 
     @Test
-    public void showHostinValueIfClientIsRegularAnd3DaysMon(){
+    public void showHostingValueIfClientIsRegularAnd3DaysMon(){
         assertThat(myHotel.calculateHostingValue("Regular", "mon", "mon", "mon"), is(330.0) );
-
     }
+
+
+    @Test
+    public void showHostingValueIfClientIsRegularAnd3DaysSat(){
+        assertThat(myHotel.calculateHostingValue("Regular", "sat", "sat", "sat"), is(300.0) );
+    }
+
+
+    @Test
+    public void showHostingValueIfClientIsPremiumAnd3DaysMon(){
+        assertThat(myHotel.calculateHostingValue("Premium", "mon", "mon", "mon"), is(270.0) );
+    }
+
+    @Test
+    public void showHostingValueIfClientIsPremiumAnd3DaysSat(){
+        assertThat(myHotel.calculateHostingValue("Premium", "sat", "sat", "sat"), is(240.0) );
+    }
+
+
+
 
 
 
