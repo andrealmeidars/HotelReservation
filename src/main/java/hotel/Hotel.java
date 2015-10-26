@@ -16,4 +16,37 @@ public class Hotel {
         this.dailyRegularHotelValue = dailyRegularHotelValue;
         this.dailyPremiumHotelValue = dailyPremiumHotelValue;
     }
+
+
+    public String getHotelName() {
+        return hotelName.getHotelName();
+    }
+
+    public double getClassificationHotelValue() {
+        return classificationHotelValue.getClassificationValue();
+    }
+
+    public double getDailyRegularHotelWeekValue() {
+        return dailyRegularHotelValue.getDailyRegularClientWeekValue();
+    }
+
+    public double getDailyRegularHotelWeekendValue() {
+        return dailyRegularHotelValue.getDailyRegularClientWeekendValue();
+    }
+
+
+
+    public double getDailyPremiumHotelWeekValue() {
+        return dailyPremiumHotelValue.getDailyPremiumClientWeekValue();
+    }
+
+    public double getDailyPremiumHotelWeekendValue() {
+        return dailyPremiumHotelValue.getDailyPremiumClientWeekendValue();
+    }
+
+
+    public String calculateHostingValue(String customerType, String day1, String day2, String day3){
+
+         return getHotelName();
+    }
 }

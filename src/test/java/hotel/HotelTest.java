@@ -1,0 +1,33 @@
+package hotel;
+
+import junit.framework.TestCase;
+import model.ClassificationHotelValue;
+import model.DailyPremiumHotelValue;
+import model.DailyRegularHotelValue;
+import model.HotelName;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+
+public class HotelTest {
+
+    Hotel myHotel;
+
+    @Before
+    public void setUp() throws Exception {
+        this.myHotel = new Hotel(new HotelName("My Hotel Resort Viamão"), new ClassificationHotelValue(2),
+                                new DailyRegularHotelValue(110, 100),
+                                new DailyPremiumHotelValue(90,80));
+        }
+
+    @Test
+    public void showNameHotel(){
+        assertThat(myHotel.calculateHostingValue("Regular", "mon", "tues", "wed"), is("My Hotel Resort Viamão") );
+
+    }
+
+
+}

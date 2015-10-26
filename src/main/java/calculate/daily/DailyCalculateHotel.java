@@ -1,6 +1,9 @@
 package calculate.daily;
 
 
+
+
+
 public class DailyCalculateHotel {
 
     public String dailyCalculate(String clientType, String day1, String day2, String day3){
