@@ -26,22 +26,11 @@ public class HotelTest {
 
 
     @Test
-    public void showHostinValueIfClientIsRegularAndInMonday(){
-        assertThat(myHotel.calculateHostingValue("Regular", "mon", "tues", "wed"), is(110.0) );
+    public void showHostinValueIfClientIsRegularAnd3DaysMon(){
+        assertThat(myHotel.calculateHostingValue("Regular", "mon", "mon", "mon"), is(330.0) );
 
     }
 
-    @Test
-    public void showHostinValueIfClientIsPremiumAndInMonday(){
-        assertThat(myHotel.calculateHostingValue("Premium", "mon", "tues", "wed"), is(90.0) );
-
-    }
-
-    @Test
-    public void showHostinValueIfClientIsRegularAndInSunday(){
-        assertThat(myHotel.calculateHostingValue("Regular", "sun", "tues", "wed"), is(100.0) );
-
-    }
 
 
 

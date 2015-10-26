@@ -50,26 +50,27 @@ public class Hotel {
 
     public double calculateHostingValue(String customerType, String day1, String day2, String day3){
 
+        String[] days = {day1, day2, day3};
 
         double hostingValue = 0;
 
 
+        for (String hostingDay : days) {
 
             if (customerType.equals("Regular")) {
-                if (weekPeriod.returnWeekPeriod(day1).equals("week")){
-                    hostingValue = getDailyRegularHotelWeekValue();
-                }else if (weekPeriod.returnWeekPeriod(day1).equals("weekend")){
+                if (weekPeriod.returnWeekPeriod(hostingDay).equals("week")) {
+                    hostingValue =  hostingValue + getDailyRegularHotelWeekValue();
+                } else if (weekPeriod.returnWeekPeriod(day1).equals("weekend")) {
                     hostingValue = getDailyRegularHotelWeekendValue();
                 }
 
 
-
-
-          }else if (customerType.equals("Premium")) {
-                if (weekPeriod.returnWeekPeriod(day1).equals("week")){
+            } else if (customerType.equals("Premium")) {
+                if (weekPeriod.returnWeekPeriod(hostingDay).equals("week")) {
                     hostingValue = getDailyPremiumHotelWeekValue();
                 }
             }
+        }
 
 
 
