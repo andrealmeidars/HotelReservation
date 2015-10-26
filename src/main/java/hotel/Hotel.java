@@ -47,6 +47,12 @@ public class Hotel {
 
     public String calculateHostingValue(String customerType, String day1, String day2, String day3){
 
+        double hostingValue;
+
+            if (customerType.equals("Regular")) {
+               // hostingValue =
+        }
+
          return getHotelName();
     }
 }
