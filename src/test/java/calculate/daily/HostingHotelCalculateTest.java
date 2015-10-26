@@ -7,25 +7,25 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class DailyCalculateHotelTest {
+public class HostingHotelCalculateTest {
 
-        DailyCalculateHotel dailyCalculateHotel;
+        HostingHotelCalculate hostingHotelCalculate;
 
 
     @Before
     public void setUp() throws Exception {
-        this.dailyCalculateHotel = new DailyCalculateHotel();
+        this.hostingHotelCalculate = new HostingHotelCalculate();
 
     }
 
     @Test
     public void showLakewoodIfSendRegularTypeAnd3WeekDays(){
-        assertThat(dailyCalculateHotel.dailyCalculate("Regular","mon","tues", "wed"), is ("Lakewood"));
+        assertThat(hostingHotelCalculate.dailyCalculate("Regular","mon","tues", "wed"), is ("Lakewood"));
     }
 
     @Test
     public void showBridgewoodIfSendRegularTypeAnd1WeekDayAndWeekend(){
-        assertThat(dailyCalculateHotel.dailyCalculate("Regular","fri","sat", "sun"), is("Bridgewood"));
+        assertThat(hostingHotelCalculate.dailyCalculate("Regular","fri","sat", "sun"), is("Bridgewood"));
     }
 
 
