@@ -6,17 +6,17 @@ import week.period.WeekPeriod;
 public class Hotel {
     private HotelName hotelName;
     private ClassificationHotelValue classificationHotelValue;
-    private DailyRegularHotelValue dailyRegularHotelValue;
-    private DailyPremiumHotelValue dailyPremiumHotelValue;
+    private DailyRateRegularHotelValue dailyRateRegularHotelValue;
+    private DailyRatePremiumHotelValue dailyRatePremiumHotelValue;
     private WeekPeriod weekPeriod;
 
 
     public Hotel(HotelName hotelName, ClassificationHotelValue classificationHotelValue,
-                 DailyRegularHotelValue dailyRegularHotelValue, DailyPremiumHotelValue dailyPremiumHotelValue) {
+                 DailyRateRegularHotelValue dailyRateRegularHotelValue, DailyRatePremiumHotelValue dailyRatePremiumHotelValue) {
         this.hotelName = hotelName;
         this.classificationHotelValue = classificationHotelValue;
-        this.dailyRegularHotelValue = dailyRegularHotelValue;
-        this.dailyPremiumHotelValue = dailyPremiumHotelValue;
+        this.dailyRateRegularHotelValue = dailyRateRegularHotelValue;
+        this.dailyRatePremiumHotelValue = dailyRatePremiumHotelValue;
         this.weekPeriod = new WeekPeriod();
     }
 
@@ -30,21 +30,21 @@ public class Hotel {
     }
 
     public double getDailyRegularHotelWeekValue() {
-        return dailyRegularHotelValue.getDailyRegularClientWeekValue();
+        return dailyRateRegularHotelValue.getDailyRateRegularClientWeekValue();
     }
 
     public double getDailyRegularHotelWeekendValue() {
-        return dailyRegularHotelValue.getDailyRegularClientWeekendValue();
+        return dailyRateRegularHotelValue.getDailyRateRegularClientWeekendValue();
     }
 
 
 
     public double getDailyPremiumHotelWeekValue() {
-        return dailyPremiumHotelValue.getDailyPremiumClientWeekValue();
+        return dailyRatePremiumHotelValue.getDailyRatePremiumClientWeekValue();
     }
 
     public double getDailyPremiumHotelWeekendValue() {
-        return dailyPremiumHotelValue.getDailyPremiumClientWeekendValue();
+        return dailyRatePremiumHotelValue.getDailyRatePremiumClientWeekendValue();
     }
 
 

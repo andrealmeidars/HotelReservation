@@ -2,8 +2,8 @@ package hotel;
 
 
 import model.ClassificationHotelValue;
-import model.DailyPremiumHotelValue;
-import model.DailyRegularHotelValue;
+import model.DailyRatePremiumHotelValue;
+import model.DailyRateRegularHotelValue;
 import model.HotelName;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,8 +19,8 @@ public class HotelTest {
     @Before
     public void setUp() throws Exception {
         this.myHotel = new Hotel(new HotelName("My Hotel Resort Viamão"), new ClassificationHotelValue(2),
-                                new DailyRegularHotelValue(110, 100),
-                                new DailyPremiumHotelValue(90,80));
+                                new DailyRateRegularHotelValue(110, 100),
+                                new DailyRatePremiumHotelValue(90,80));
         }
 
 
