@@ -48,7 +48,7 @@ public class Hotel {
     }
 
 
-    private double returnRegularHostingDayValue(String day){
+    public double returnRegularHostingDayValue(String day){
         double hostingValue;
 
         if (weekPeriod.returnWeekPeriod(day).equals("week")) {
@@ -62,7 +62,7 @@ public class Hotel {
 
 
 
-    private double returnPremiumHostingDayValue(String day){
+    public double returnPremiumHostingDayValue(String day){
         double hostingValue;
 
         if (weekPeriod.returnWeekPeriod(day).equals("week")) {

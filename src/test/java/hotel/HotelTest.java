@@ -13,13 +13,27 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class HotelTest {
 
     Hotel myHotel;
+    Hotel hotelDay;
+
 
     @Before
     public void setUp() throws Exception {
         this.myHotel = new Hotel("My Hotel Resort Viamão", 2,
                 new DailyRateRegularHotelValue(110,100), new DailyRatePremiumHotelValue(90,80));
+        this.hotelDay = new Hotel("My Hotel Resort Viamão", 2,
+                new DailyRateRegularHotelValue(110,100), new DailyRatePremiumHotelValue(90,80));
+
+
+
      }
 
+
+
+    @Test
+    public void returnValueIfDaysWeekAndRegularClient(){
+        assertThat(hotelDay.returnRegularHostingDayValue("sun"), is (100.0));
+
+    }
 
 
     @Test
