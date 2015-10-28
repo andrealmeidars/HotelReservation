@@ -30,9 +30,14 @@ public class HotelTest {
 
 
     @Test
-    public void returnValueIfDaysWeekAndRegularClient(){
+    public void returnValueIfDaysWeekendAndRegularClient(){
         assertThat(hotelDay.returnRegularHostingDayValue("sun"), is (100.0));
+    }
 
+
+    @Test
+    public void returnValueIfDaysWeekdAndRegularClient(){
+        assertThat(hotelDay.returnRegularHostingDayValue("mon"), is (110.0));
     }
 
 
