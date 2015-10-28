@@ -48,35 +48,49 @@ public class Hotel {
     }
 
 
+    private double returnRegularHostingDayValue(String day){
+        double hostingValue = 0;
+
+        if (weekPeriod.returnWeekPeriod(day).equals("week")) {
+            hostingValue = getDailyRegularHotelWeekValue();
+        } else
+            hostingValue = getDailyRegularHotelWeekendValue();
+
+        return hostingValue;
+    }
+
+
+
+
+    private double returnPremiumHostingDayValue(String day){
+        double hostingValue = 0;
+
+        if (weekPeriod.returnWeekPeriod(day).equals("week")) {
+            hostingValue = getDailyPremiumHotelWeekValue();
+        } else
+            hostingValue = getDailyPremiumHotelWeekendValue();
+
+        return hostingValue;
+    }
+
+
+
     public double calculateHostingValue(String customerType, String day1, String day2, String day3){
 
         String[] days = {day1, day2, day3};
-
         double hostingValue = 0;
 
-
-        for (String hostingDay : days) {
+         for (String hostingDay : days) {
 
             if (customerType.equals("Regular")) {
-                if (weekPeriod.returnWeekPeriod(hostingDay).equals("week")) {
-                    hostingValue =  hostingValue + getDailyRegularHotelWeekValue();
-                } else if (weekPeriod.returnWeekPeriod(hostingDay).equals("weekend")) {
-                    hostingValue =  hostingValue + getDailyRegularHotelWeekendValue();
-                }
+                hostingValue += returnRegularHostingDayValue(hostingDay);
 
-
-            } else if (customerType.equals("Premium")) {
-                if (weekPeriod.returnWeekPeriod(hostingDay).equals("week")) {
-                    hostingValue =  hostingValue + getDailyPremiumHotelWeekValue();
-                }else if (weekPeriod.returnWeekPeriod(hostingDay).equals("weekend")) {
-                    hostingValue =  hostingValue + getDailyPremiumHotelWeekendValue();
-                }
+             } else if (customerType.equals("Premium")) {
+                hostingValue += returnPremiumHostingDayValue(hostingDay);
 
             }
         }
 
-
-
-         return hostingValue;
+        return hostingValue;
     }
 }
