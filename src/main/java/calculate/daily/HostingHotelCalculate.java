@@ -13,16 +13,19 @@ public class HostingHotelCalculate {
         Hotel Lakewood = new Hotel("Lakewood", 3,
                 new DailyRateRegularHotelValue(110, 90), new DailyRatePremiumHotelValue(80,80));
 
+        Hotel Bridgewood = new Hotel("Bridgewood", 4,
+                new DailyRateRegularHotelValue(160, 110), new DailyRatePremiumHotelValue(60,50));
+
+
 
         double LakewoodValue = Lakewood.calculateHostingValue(clientType,day1,day2,day3);
+        double BridgewoodValue = Bridgewood.calculateHostingValue(clientType,day1,day2,day3);
 
+        if (LakewoodValue < BridgewoodValue){
+            return Lakewood.getHotelName();
+        }else
+            return Bridgewood.getHotelName();
 
-
-
-
-
-
-        return Lakewood.getHotelName();
 
     }
 }

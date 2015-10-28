@@ -26,6 +26,13 @@ public class HostingHotelCalculateTest {
     }
 
 
+    @Test
+    public void showCheapestBridgewoodHotel (){
+        assertThat(hostingHotelCalculate.calculateHotels("Regular", "mon", "tues", "wed"), is ("Lakewood"));
+
+    }
+
+
 
 
 }
