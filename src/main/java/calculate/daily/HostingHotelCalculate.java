@@ -15,8 +15,11 @@ public class HostingHotelCalculate {
                 new DailyRateRegularHotelValue(110, 90), new DailyRatePremiumHotelValue(80,80));
 
 
-        double value = Lakewood.calculateHostingValue(clientType,day1,day2,day3);
-        
+        double LakewoodValue = Lakewood.calculateHostingValue(clientType,day1,day2,day3);
+
+
+
+
 
 
 
