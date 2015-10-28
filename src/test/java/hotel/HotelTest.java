@@ -1,10 +1,8 @@
 package hotel;
 
 
-import model.ClassificationHotelValue;
 import model.DailyRatePremiumHotelValue;
 import model.DailyRateRegularHotelValue;
-import model.HotelName;
 import org.junit.Before;
 import org.junit.Test;
 

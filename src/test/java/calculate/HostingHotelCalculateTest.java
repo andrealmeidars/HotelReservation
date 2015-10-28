@@ -1,6 +1,7 @@
-package calculate.daily;
+package calculate;
 
 
+import calculate.daily.HostingHotelCalculate;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,8 +9,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class HostingHotelCalculateTest {
-
-        HostingHotelCalculate hostingHotelCalculate;
+    HostingHotelCalculate hostingHotelCalculate;
 
 
     @Before
@@ -18,11 +18,13 @@ public class HostingHotelCalculateTest {
 
     }
 
-   @Test
-    public void showCheapestLakewoodHotel (){
-       assertThat(hostingHotelCalculate.calculateHotels("Regular", "mon", "tues", "wed"), is ("Lakewood"));
 
-   }
+    @Test
+    public void showCheapestLakewoodHotel (){
+        assertThat(hostingHotelCalculate.calculateHotels("Regular", "mon", "tues", "wed"), is ("Lakewood"));
+
+    }
+
 
 
 
