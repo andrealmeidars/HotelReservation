@@ -18,10 +18,9 @@ public class HotelTest {
 
     @Before
     public void setUp() throws Exception {
-        this.myHotel = new Hotel(new HotelName("My Hotel Resort Viamão"), new ClassificationHotelValue(2),
-                                new DailyRateRegularHotelValue(110, 100),
-                                new DailyRatePremiumHotelValue(90,80));
-        }
+        this.myHotel = new Hotel("My Hotel Resort Viamão", 2,
+                new DailyRateRegularHotelValue(110,100), new DailyRatePremiumHotelValue(90,80));
+     }
 
 
 

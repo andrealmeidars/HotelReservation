@@ -4,14 +4,14 @@ import model.*;
 import week.period.WeekPeriod;
 
 public class Hotel {
-    private HotelName hotelName;
-    private ClassificationHotelValue classificationHotelValue;
+    private String hotelName;
+    private double classificationHotelValue ;
     private DailyRateRegularHotelValue dailyRateRegularHotelValue;
     private DailyRatePremiumHotelValue dailyRatePremiumHotelValue;
     private WeekPeriod weekPeriod;
 
 
-    public Hotel(HotelName hotelName, ClassificationHotelValue classificationHotelValue,
+    public Hotel(String hotelName, double classificationHotelValue,
                  DailyRateRegularHotelValue dailyRateRegularHotelValue, DailyRatePremiumHotelValue dailyRatePremiumHotelValue) {
         this.hotelName = hotelName;
         this.classificationHotelValue = classificationHotelValue;
@@ -22,11 +22,11 @@ public class Hotel {
 
 
     public String getHotelName() {
-        return hotelName.getHotelName();
+        return hotelName;
     }
 
     public double getClassificationHotelValue() {
-        return classificationHotelValue.getClassificationValue();
+        return classificationHotelValue;
     }
 
     public double getDailyRegularHotelWeekValue() {
