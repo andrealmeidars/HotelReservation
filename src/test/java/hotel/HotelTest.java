@@ -46,6 +46,11 @@ public class HotelTest {
         assertThat(hotelDay.returnPremiumHostingDayValue("sun"), is (80.0));
     }
 
+    @Test
+    public void returnValueIfDaysWeekAndPremiumClient(){
+        assertThat(hotelDay.returnPremiumHostingDayValue("mon"), is (90.0));
+    }
+
 
 
 
