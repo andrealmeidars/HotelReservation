@@ -13,48 +13,35 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class HotelTest {
 
     Hotel myHotel;
-    Hotel hotelDay;
 
 
     @Before
     public void setUp() throws Exception {
         this.myHotel = new Hotel("My Hotel Resort Viamão", 2,
                 new DailyRateRegularHotelValue(110,100), new DailyRatePremiumHotelValue(90,80));
-        this.hotelDay = new Hotel("My Hotel Resort Viamão", 2,
-                new DailyRateRegularHotelValue(110,100), new DailyRatePremiumHotelValue(90,80));
-
-
-
      }
-
-
 
     @Test
     public void returnValueIfDaysWeekendAndRegularClient(){
-        assertThat(hotelDay.returnRegularHostingDayValue("sun"), is (100.0));
+        assertThat(myHotel.returnRegularHostingDayValue("sun"), is (100.0));
     }
 
 
     @Test
     public void returnValueIfDaysWeekdAndRegularClient(){
-        assertThat(hotelDay.returnRegularHostingDayValue("mon"), is (110.0));
+        assertThat(myHotel.returnRegularHostingDayValue("mon"), is (110.0));
     }
 
 
     @Test
     public void returnValueIfDaysWeekendAndPremiumClient(){
-        assertThat(hotelDay.returnPremiumHostingDayValue("sun"), is (80.0));
+        assertThat(myHotel.returnPremiumHostingDayValue("sun"), is (80.0));
     }
 
     @Test
     public void returnValueIfDaysWeekAndPremiumClient(){
-        assertThat(hotelDay.returnPremiumHostingDayValue("mon"), is (90.0));
+        assertThat(myHotel.returnPremiumHostingDayValue("mon"), is (90.0));
     }
-
-
-
-
-
 
     @Test
     public void showHostingValueIfClientIsRegularAnd3DaysMon(){
@@ -77,11 +64,5 @@ public class HotelTest {
     public void showHostingValueIfClientIsPremiumAnd3DaysSat(){
         assertThat(myHotel.calculateHostingValue("Premium", "sat", "sat", "sat"), is(240.0) );
     }
-
-
-
-
-
-
 
 }
