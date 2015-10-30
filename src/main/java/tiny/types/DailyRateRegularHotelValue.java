@@ -1,4 +1,4 @@
-package model;
+package tiny.types;
 
 
 public class DailyRateRegularHotelValue {

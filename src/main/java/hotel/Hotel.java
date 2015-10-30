@@ -1,6 +1,8 @@
 package hotel;
 
-import model.*;
+
+import tiny.types.DailyRatePremiumHotelValue;
+import tiny.types.DailyRateRegularHotelValue;
 import week.period.WeekPeriod;
 
 public class Hotel {
@@ -75,9 +77,9 @@ public class Hotel {
 
 
 
-    public double calculateHostingValue(String customerType, String day1, String day2, String day3){
+    public double calculateHostingValue(String customerType, String[] days){
 
-        String[] days = {day1, day2, day3};
+
         double hostingValue = 0;
 
          for (String hostingDay : days) {

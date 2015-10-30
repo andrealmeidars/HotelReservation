@@ -12,28 +12,34 @@ public class HostingHotelCalculateTest {
     HostingHotelCalculate hostingHotelCalculate;
 
 
+
     @Before
     public void setUp() throws Exception {
         this.hostingHotelCalculate = new HostingHotelCalculate();
+
 
     }
 
 
     @Test
     public void showCheapestLakewoodHotel (){
-        assertThat(hostingHotelCalculate.calculateHotels("Regular", "mon", "tues", "wed"), is ("Lakewood"));
+        String[] daysLakewood = {"mon", "tues", "wed"};
+        assertThat(hostingHotelCalculate.calculateHotels("Regular", daysLakewood), is("Lakewood"));
+
 
     }
 
     @Test
     public void showCheapestBridgewoodHotel (){
-        assertThat(hostingHotelCalculate.calculateHotels("Regular", "fri", "sat", "sun"), is ("Bridgewood"));
+        String[] daysBridgewood = {"fri", "sat", "sun"};
+        assertThat(hostingHotelCalculate.calculateHotels("Regular", daysBridgewood), is ("Bridgewood"));
 
     }
 
     @Test
     public void showCheapestRidgewoodHotel (){
-        assertThat(hostingHotelCalculate.calculateHotels("Premium", "thru", "fri", "sat"), is ("Ridgewood"));
+        String[] daysRidgewood = {"thru", "fri", "sat"};
+        assertThat(hostingHotelCalculate.calculateHotels("Premium", daysRidgewood), is ("Ridgewood"));
 
     }
 

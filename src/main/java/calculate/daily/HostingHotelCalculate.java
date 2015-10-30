@@ -3,9 +3,6 @@ package calculate.daily;
 
 import hotel.Hotel;
 import hotel.HotelList;
-import model.DailyRatePremiumHotelValue;
-import model.DailyRateRegularHotelValue;
-
 import java.util.List;
 
 
@@ -14,21 +11,22 @@ public class HostingHotelCalculate {
 
 
 
-    public String calculateHotels(String clientType, String day1, String day2, String day3){
+    public String calculateHotels(String clientType, String[] days){
 
 
-        double hostingValue = 0;
+        double lowerHostingValue = 0;
         String hotelName = "";
         double classificationHotel = 0;
         hotels = HotelList.getHotelList();
 
 
+         for (Hotel hotel : hotels){
 
-        for (Hotel hotel : hotels){
+            double hostingValue = hotel.calculateHostingValue(clientType, days);
 
-            if (  (hostingValue == 0 ) ||  ( hostingValue >= hotel.calculateHostingValue(clientType, day1, day2, day3)) ) {
+            if (  (lowerHostingValue == 0 ) ||  ( lowerHostingValue >= hostingValue) ) {
                 hotelName = hotel.getHotelName();
-                hostingValue = hotel.calculateHostingValue(clientType, day1, day2, day3);
+                lowerHostingValue = hostingValue;
 
                 if (classificationHotel == 0){
                     classificationHotel = hotel.getClassificationHotelValue();
@@ -39,8 +37,7 @@ public class HostingHotelCalculate {
 
         }
 
-
-        return hotelName;
+         return hotelName;
 
 
     }

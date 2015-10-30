@@ -11,9 +11,7 @@ public class WeekPeriod {
             if (value.equals(day)) {
                 return "week";
             }
-
         }
-
     return "weekend";
 
     }

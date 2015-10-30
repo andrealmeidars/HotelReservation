@@ -1,8 +1,8 @@
 package hotel;
 
 
-import model.DailyRatePremiumHotelValue;
-import model.DailyRateRegularHotelValue;
+import tiny.types.DailyRatePremiumHotelValue;
+import tiny.types.DailyRateRegularHotelValue;
 
 import java.util.ArrayList;
 import java.util.List;
