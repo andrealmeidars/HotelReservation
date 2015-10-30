@@ -2,17 +2,12 @@ package week.period;
 
 
 public class WeekPeriod {
+     public String returnWeekOrWeekend(String day){
 
-   private String[] week = {"mon","tues", "wed","thru", "fri"};
-
-      public String returnWeekPeriod(String day){
-
-        for (String value : week) {
-            if (value.equals(day)) {
-                return "week";
-            }
-        }
-    return "weekend";
+          if (day.equals("sat") || day.equals("sun")){
+              return  "weekend";
+          }
+          return "week";
 
     }
 

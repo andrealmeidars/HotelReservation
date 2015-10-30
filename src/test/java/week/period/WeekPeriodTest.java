@@ -18,12 +18,12 @@ public class WeekPeriodTest{
 
     @Test
     public void showInfoWeekendSendSat(){
-        assertThat(weekPeriod.returnWeekPeriod("sat"), is("weekend"));
+        assertThat(weekPeriod.returnWeekOrWeekend("sat"), is("weekend"));
     }
 
     @Test
     public void showInfoWeekSendMon(){
-        assertThat(weekPeriod.returnWeekPeriod("mon"), is("week"));
+        assertThat(weekPeriod.returnWeekOrWeekend("mon"), is("week"));
     }
 
 }
