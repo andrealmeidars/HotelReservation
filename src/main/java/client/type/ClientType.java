@@ -3,7 +3,10 @@ package client.type;
 
 import java.util.Scanner;
 
+
+
 public class ClientType {
+
 
 public String returnTypeClient() {
 
