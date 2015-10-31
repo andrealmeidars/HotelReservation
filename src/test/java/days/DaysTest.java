@@ -79,4 +79,14 @@ public class DaysTest  {
 
     }
 
+    @Test
+    public void returnSatOptionDay(){
+
+        ByteArrayInputStream in = new ByteArrayInputStream("6".getBytes());
+        System.setIn(in);
+
+        assertThat(days.returnDayHosting(), is ("sat"));
+
+    }
+
 }
