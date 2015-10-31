@@ -74,4 +74,11 @@ public class HotelTest {
         assertThat(myHotel.calculateHostingValue("Premium", daysSaturday), is(240.0) );
     }
 
+
+    @Test
+    public void showHotelName(){
+
+        assertThat(myHotel.getHotelName(), is("My Hotel Resort Viamão"));
+    }
+
 }
