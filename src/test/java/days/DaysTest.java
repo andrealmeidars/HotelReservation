@@ -39,4 +39,14 @@ public class DaysTest  {
 
     }
 
+    @Test
+    public void returnTuesOptionDay(){
+
+        ByteArrayInputStream in = new ByteArrayInputStream("2".getBytes());
+        System.setIn(in);
+
+        assertThat(days.returnDayHosting(), is ("tues"));
+
+    }
+
 }
