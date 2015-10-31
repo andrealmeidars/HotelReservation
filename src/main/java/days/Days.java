@@ -9,7 +9,7 @@ public class Days {
 
         System.out.println(" Choose one day");
 
-        String[] days = {"sun" };
+        String[] days = {"sun", "mon", "tues", "wed", "thur", "fri", "sat"  };
 
         for (String day : days) {
 

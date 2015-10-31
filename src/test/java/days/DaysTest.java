@@ -29,4 +29,14 @@ public class DaysTest  {
 
     }
 
+    @Test
+    public void returnMonOptionDay(){
+
+        ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
+        System.setIn(in);
+
+        assertThat(days.returnDayHosting(), is ("mon"));
+
+    }
+
 }
