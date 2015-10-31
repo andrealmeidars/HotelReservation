@@ -28,8 +28,16 @@ public class ClientTypeTest  {
         System.setIn(in);
 
         assertThat(clientType.returnTypeClient(), is("Regular"));
+    }
+
+    @Test
+    public void returnPremiumTypeClient() {
+
+        ByteArrayInputStream in = new ByteArrayInputStream("2".getBytes());
+        System.setIn(in);
+
+        assertThat(clientType.returnTypeClient(), is("Premium"));
+    }
 
 
     }
-
-}
