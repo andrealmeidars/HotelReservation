@@ -39,5 +39,15 @@ public class ClientTypeTest  {
         assertThat(clientType.returnTypeClient(), is("Premium"));
     }
 
+    @Test(expected = NullPointerException.class)
+    public void invalidOptionClient(){
+
+        ByteArrayInputStream in = new ByteArrayInputStream("3".getBytes());
+        System.setIn(in);
+
+        assertThat(clientType.returnTypeClient(), is("otherType"));
+
+    }
+
 
     }

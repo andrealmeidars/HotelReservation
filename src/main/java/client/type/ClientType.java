@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class ClientType {
 
 
-public String returnTypeClient() {
+public String returnTypeClient() throws NullPointerException{
 
         System.out.println(" Choose the Type of Customer:");
         System.out.println(" Options:  1 = Regular  - 2 = Premium ");
@@ -20,9 +20,13 @@ public String returnTypeClient() {
               return "Regular";
          } else if(optionClient.equals("2")) {
               return "Premium";
-        }
+        } else
 
-        return  "erro";
+            throw new NullPointerException();
+
+
+          //return "";
+
     }
 
 
