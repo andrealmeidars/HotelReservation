@@ -3,9 +3,11 @@ package days;
 import java.util.Scanner;
 
 public class Days {
-    private int count = 0;
+
 
     public String returnDayHosting(){
+
+        int count = 0;
 
         System.out.println(" Choose one day");
 
