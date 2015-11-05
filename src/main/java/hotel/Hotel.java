@@ -5,6 +5,8 @@ import tiny.types.DailyRatePremiumHotelValue;
 import tiny.types.DailyRateRegularHotelValue;
 import week.period.WeekPeriod;
 
+import java.util.List;
+
 public class Hotel {
     private String hotelName;
     private double classificationHotelValue ;
@@ -77,17 +79,18 @@ public class Hotel {
 
 
 
-    public double calculateHostingValue(String customerType, String[] days){
+    public double calculateHostingValue(Boolean customerRegular, List<String> days){
 
 
         double hostingValue = 0;
 
          for (String hostingDay : days) {
 
-            if (customerType.equals("Regular")) {
+
+            if (customerRegular) {
                 hostingValue += returnRegularHostingDayValue(hostingDay);
 
-             } else if (customerType.equals("Premium")) {
+             } else {
                 hostingValue += returnPremiumHostingDayValue(hostingDay);
 
             }
