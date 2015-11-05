@@ -54,6 +54,7 @@ public class ReadFile {
     private void reservationInputDates(){
         String inputReservation = inPutReservation;
 
+
         for (int i = 0; i < inputReservation.length() - 1; i++) {
 
             int indexIn = inputReservation.indexOf("(");

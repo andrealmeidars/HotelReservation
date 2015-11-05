@@ -92,10 +92,6 @@ public class HotelTest {
     }
 
 
-//    @Test
-//    public void showHotelName(){
-//
-//        assertThat(myHotel.getHotelName(), is("My Hotel Resort Viamão"));
-//    }
+
 
 }
