@@ -2,51 +2,75 @@ package calculate;
 
 
 import calculate.daily.HostingHotelCalculate;
+import hotel.Hotel;
+import hotel.HotelList;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.theInstance;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class HostingHotelCalculateTest {
     HostingHotelCalculate hostingHotelCalculate;
+    boolean isRegularClient;
+    boolean isRegularClienteFalse;
+    List<String> daysLakewood = new LinkedList<>();
+    List<String> daysBridgewood = new LinkedList<>();
+    List<String> daysRidgewood = new LinkedList<>();
+
 
 
 
     @Before
     public void setUp() throws Exception {
         this.hostingHotelCalculate = new HostingHotelCalculate();
+        this.isRegularClient = true;
+        this.isRegularClienteFalse = false;
 
 
     }
 
 
     @Test
-    public void showCheapestLakewoodHotel (){
-        String[] daysLakewood = {"mon", "tues", "wed"};
-        assertThat(hostingHotelCalculate.calculateHotels("Regular", daysLakewood), is("Lakewood"));
+    public void showCheapestLakewoodHotel () {
+        daysLakewood.add("mon");
+        daysLakewood.add("tues");
+        daysLakewood.add("wed");
+
+        assertThat(hostingHotelCalculate.calculateHotels(isRegularClient, daysLakewood), is("Lakewood"));
 
 
     }
 
     @Test
     public void showCheapestBridgewoodHotel (){
-        String[] daysBridgewood = {"fri", "sat", "sun"};
-        assertThat(hostingHotelCalculate.calculateHotels("Regular", daysBridgewood), is ("Bridgewood"));
+        daysBridgewood.add("fri");
+        daysBridgewood.add("sat");
+        daysBridgewood.add("sun");
+
+        assertThat(hostingHotelCalculate.calculateHotels(isRegularClient, daysBridgewood), is ("Bridgewood"));
 
     }
 
     @Test
     public void showCheapestRidgewoodHotel (){
-        String[] daysRidgewood = {"thru", "fri", "sat"};
-        assertThat(hostingHotelCalculate.calculateHotels("Premium", daysRidgewood), is ("Ridgewood"));
+        daysRidgewood.add("thru");
+        daysRidgewood.add("fri");
+        daysRidgewood.add("sat");
+
+        assertThat(hostingHotelCalculate.calculateHotels(isRegularClienteFalse, daysRidgewood), is ("Ridgewood"));
 
     }
 
 
-
-
-
-
-
 }
+
+
+
+
+
+
