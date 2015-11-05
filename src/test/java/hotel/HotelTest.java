@@ -8,6 +8,8 @@ import org.junit.Test;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -16,6 +18,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class HotelTest {
 
     Hotel myHotel;
+    boolean isRegularClient;
+    boolean isRegularClienteFalse;
+
+    List<String> daysMonday =  new LinkedList<>();
+    List<String> daysSaturday = new LinkedList<>();
+
 
 
 
@@ -23,7 +31,16 @@ public class HotelTest {
     public void setUp() throws Exception {
         this.myHotel = new Hotel("My Hotel Resort Viamão", 2,
                 new DailyRateRegularHotelValue(110,100), new DailyRatePremiumHotelValue(90,80));
+        this.isRegularClient = true;
+        this.isRegularClienteFalse = false;
 
+        daysMonday.add("mon");
+        daysMonday.add("mon");
+        daysMonday.add("mon");
+
+        daysSaturday.add("sat");
+        daysSaturday.add("sat");
+        daysSaturday.add("sat");
      }
 
     @Test
@@ -50,35 +67,35 @@ public class HotelTest {
 
     @Test
     public void showHostingValueIfClientIsRegularAnd3DaysMon(){
-        String[] daysMonday = {"mon", "mon", "mon"};
-        assertThat(myHotel.calculateHostingValue("Regular", daysMonday), is(330.0) );
+
+        assertThat(myHotel.calculateHostingValue(isRegularClient, daysMonday), is(330.0) );
     }
 
 
     @Test
     public void showHostingValueIfClientIsRegularAnd3DaysSat(){
-        String[] daysSaturday = {"sat", "sat", "sat"};
-        assertThat(myHotel.calculateHostingValue("Regular", daysSaturday), is(300.0) );
+
+        assertThat(myHotel.calculateHostingValue(isRegularClient, daysSaturday), is(300.0) );
     }
 
 
     @Test
     public void showHostingValueIfClientIsPremiumAnd3DaysMon(){
-        String[] daysMonday = {"mon", "mon", "mon"};
-        assertThat(myHotel.calculateHostingValue("Premium", daysMonday), is(270.0) );
+
+        assertThat(myHotel.calculateHostingValue(isRegularClienteFalse, daysMonday), is(270.0) );
     }
 
     @Test
     public void showHostingValueIfClientIsPremiumAnd3DaysSat(){
-        String[] daysSaturday = {"sat", "sat", "sat"};
-        assertThat(myHotel.calculateHostingValue("Premium", daysSaturday), is(240.0) );
+
+        assertThat(myHotel.calculateHostingValue(isRegularClienteFalse, daysSaturday), is(240.0) );
     }
 
 
-    @Test
-    public void showHotelName(){
-
-        assertThat(myHotel.getHotelName(), is("My Hotel Resort Viamão"));
-    }
+//    @Test
+//    public void showHotelName(){
+//
+//        assertThat(myHotel.getHotelName(), is("My Hotel Resort Viamão"));
+//    }
 
 }
