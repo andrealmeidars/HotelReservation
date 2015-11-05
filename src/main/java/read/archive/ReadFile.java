@@ -20,18 +20,18 @@ public class ReadFile {
 
 
       try {
-            BufferedReader br = new BufferedReader(new FileReader(END_FILE));
-            StringBuilder sb = new StringBuilder();
-            String line = br.readLine();
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(END_FILE));
+            StringBuilder stringBuilder = new StringBuilder();
+            String line = bufferedReader.readLine();
             while (line != null) {
                 line = line.trim();
-                sb.append(line);
-                line = br.readLine();
+                stringBuilder.append(line);
+                line = bufferedReader.readLine();
 
             }
-            inPutReservation = sb.toString();
+            inPutReservation = stringBuilder.toString();
 
-            br.close();
+          bufferedReader.close();
           reservationInputClient();
           reservationInputDates();
 
@@ -62,10 +62,7 @@ public class ReadFile {
             String day = inputReservation.substring(indexIn + 1, indexOut);
             inputReservation = inputReservation.substring(indexOut + 1);
 
-
             days.add(day);
-
-            //System.out.println(days);
 
         }
 
