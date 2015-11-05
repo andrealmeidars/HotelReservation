@@ -11,7 +11,7 @@ public class HostingHotelCalculate {
 
 
 
-    public String calculateHotels(String clientType, String[] days){
+    public String calculateHotels(boolean clientType, List<String > days){
 
 
         double lowerHostingValue = 0;
