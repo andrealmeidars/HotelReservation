@@ -55,10 +55,10 @@ public class Hotel {
     public double returnRegularHostingDayValue(String day){
         double hostingValue;
 
-        if (weekPeriod.returnWeekOrWeekend(day).equals("week")) {
-            hostingValue = getDailyRegularHotelWeekValue();
-        } else
+        if (weekPeriod.isWeekend(day)) {
             hostingValue = getDailyRegularHotelWeekendValue();
+        } else
+            hostingValue = getDailyRegularHotelWeekValue();
 
         return hostingValue;
     }
@@ -69,10 +69,10 @@ public class Hotel {
     public double returnPremiumHostingDayValue(String day){
         double hostingValue;
 
-        if (weekPeriod.returnWeekOrWeekend(day).equals("week")) {
-            hostingValue = getDailyPremiumHotelWeekValue();
-        } else
+        if (weekPeriod.isWeekend(day)) {
             hostingValue = getDailyPremiumHotelWeekendValue();
+        } else
+            hostingValue = getDailyPremiumHotelWeekValue();
 
         return hostingValue;
     }

@@ -2,12 +2,12 @@ package week.period;
 
 
 public class WeekPeriod {
-     public String returnWeekOrWeekend(String day){
+     public boolean isWeekend(String day){
 
           if (day.equals("sat") || day.equals("sun")){
-              return  "weekend";
+              return  true;
           }
-          return "week";
+          return false;
 
     }
 
