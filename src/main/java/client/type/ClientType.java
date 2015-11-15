@@ -1,26 +1,37 @@
 package client.type;
 
+public enum ClientType {
 
+    REWARDS, REGULAR;
 
-public class ClientType {
-    boolean isClientRegular = false;
+    public static ClientType getByType(String type) {
 
+        if (isRewardsClient(type)) {
+            return ClientType.REWARDS;
+        }
 
-
-    public void insertTypeClient(String customer) {
-
-        if (customer.equals("Regular")) {
-            isClientRegular = true;
-
-        } else {
-            isClientRegular = false;
-         }
+        return ClientType.REGULAR;
     }
 
-    public boolean returnCustomer(){
-        return isClientRegular;
+    public boolean isRegular() {
 
+        if (this.name().equals(ClientType.REGULAR.name())) {
+                return true;
+        }else
+                return false;
     }
+
+    public static boolean isRewardsClient(String type) {
+
+        if (type.equals(ClientType.REWARDS.name())) {
+            return true;
+        }
+        return false;
+    }
+
+
+
+
 }
 
 
