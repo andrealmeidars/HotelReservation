@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ReadFile {
+public class ReadInputInformation {
     private String END_FILE = "src/main/java/file/file.txt";
     private String inPutReservation;
     private String clientType;
