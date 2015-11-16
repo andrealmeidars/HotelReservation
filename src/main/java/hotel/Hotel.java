@@ -1,58 +1,56 @@
 package hotel;
 
 
-import tiny.types.DailyRatePremiumHotelValue;
-import tiny.types.DailyRateRegularHotelValue;
+import client.type.ClientType;
+import tiny.types.Fares;
 import week.period.WeekPeriod;
 
 import java.util.List;
 
 public class Hotel {
-    private String hotelName;
-    private double classificationHotelValue ;
-    private DailyRateRegularHotelValue dailyRateRegularHotelValue;
-    private DailyRatePremiumHotelValue dailyRatePremiumHotelValue;
+    private final String name;
+    private int rates;
+    private Fares regularClientFares;
+    private Fares rewardsClientFares;
     private WeekPeriod weekPeriod;
 
 
-    public Hotel(String hotelName, double classificationHotelValue,
-                 DailyRateRegularHotelValue dailyRateRegularHotelValue, DailyRatePremiumHotelValue dailyRatePremiumHotelValue) {
-        this.hotelName = hotelName;
-        this.classificationHotelValue = classificationHotelValue;
-        this.dailyRateRegularHotelValue = dailyRateRegularHotelValue;
-        this.dailyRatePremiumHotelValue = dailyRatePremiumHotelValue;
+    public Hotel(String name, int rates, Fares regularClientFares, Fares rewardsClientFares) {
+        this.name = name;
+        this.rates = rates;
+        this.regularClientFares = regularClientFares;
+        this.rewardsClientFares = rewardsClientFares;
         this.weekPeriod = new WeekPeriod();
     }
 
 
-    public String getHotelName() {
-        return hotelName;
+    public String getName() {
+        return name;
     }
 
-    public double getClassificationHotelValue() {
-        return classificationHotelValue;
+    public int getRates() {
+        return rates;
     }
 
     public double getDailyRegularHotelWeekValue() {
-        return dailyRateRegularHotelValue.getDailyRateRegularClientWeekValue();
+        return regularClientFares.getWeekdayFare();
     }
 
     public double getDailyRegularHotelWeekendValue() {
-        return dailyRateRegularHotelValue.getDailyRateRegularClientWeekendValue();
+        return regularClientFares.getWeekendFare();
     }
 
 
-
-    public double getDailyPremiumHotelWeekValue() {
-        return dailyRatePremiumHotelValue.getDailyRatePremiumClientWeekValue();
+    public double getDailyRewardsHotelWeekValue() {
+        return rewardsClientFares.getWeekdayFare();
     }
 
-    public double getDailyPremiumHotelWeekendValue() {
-        return dailyRatePremiumHotelValue.getDailyRatePremiumClientWeekendValue();
+    public double getDailyRewardsHotelWeekendValue() {
+        return rewardsClientFares.getWeekendFare();
     }
 
 
-    public double returnRegularHostingDayValue(String day){
+    public double returnRegularHostingDayValue(String day) {
         double hostingValue;
 
         if (weekPeriod.isWeekend(day)) {
@@ -64,34 +62,30 @@ public class Hotel {
     }
 
 
-
-
-    public double returnPremiumHostingDayValue(String day){
+    public double returnRewardsHostingDayValue(String day) {
         double hostingValue;
 
         if (weekPeriod.isWeekend(day)) {
-            hostingValue = getDailyPremiumHotelWeekendValue();
+            hostingValue = getDailyRewardsHotelWeekendValue();
         } else
-            hostingValue = getDailyPremiumHotelWeekValue();
+            hostingValue = getDailyRewardsHotelWeekValue();
 
         return hostingValue;
     }
 
 
-
-    public double calculateHostingValue(Boolean customerRegular, List<String> days){
+    public double calculateHostingValue(ClientType clientType, List<String> days) {
 
 
         double hostingValue = 0;
 
-         for (String hostingDay : days) {
+        for (String hostingDay : days) {
 
-
-            if (customerRegular) {
+            if (clientType.isRegular()) {
                 hostingValue += returnRegularHostingDayValue(hostingDay);
 
-             } else {
-                hostingValue += returnPremiumHostingDayValue(hostingDay);
+            } else {
+                hostingValue += returnRewardsHostingDayValue(hostingDay);
 
             }
         }
