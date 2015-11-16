@@ -12,7 +12,7 @@ import java.util.List;
 public class SearchCheapestHotel {
     private HostingHotelCalculate hostingHotelCalculate = new HostingHotelCalculate();
     private List<String> days = new ArrayList<>();
-    private Printer printer = new Printer();
+    private Printer print = new Printer();
 
 
 
@@ -25,7 +25,7 @@ public class SearchCheapestHotel {
             ClientType clientType = getClientTypeFromInput(inputArrayAtIndex);
             List<String> requestedDays = getDatesFromInput(inputArrayAtIndex);
 
-            printer.printer(hostingHotelCalculate.findCheapestHotelToClient(clientType, requestedDays));
+            print.printer(hostingHotelCalculate.findCheapestHotelToClient(clientType, requestedDays));
             removeAllDatesForArray();
 
 
