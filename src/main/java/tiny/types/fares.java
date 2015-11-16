@@ -1,20 +1,20 @@
 package tiny.types;
 
 
-public class fares {
-    private double weekdayFare;
-    private double dailyRateRegularClientWeekendValue;
+public class Fares {
+    private final double weekdayFare;
+    private final double weekendFare;
 
-    public fares(double weekdayFare, double dailyRateRegularClientWeekendValue) {
+    public Fares(double weekdayFare, double weekendFare) {
         this.weekdayFare = weekdayFare;
-        this.dailyRateRegularClientWeekendValue = dailyRateRegularClientWeekendValue;
+        this.weekendFare = weekendFare;
     }
 
     public double getWeekdayFare() {
         return weekdayFare;
     }
 
-    public double getDailyRateRegularClientWeekendValue() {
-        return dailyRateRegularClientWeekendValue;
+    public double getWeekendFare() {
+        return weekendFare;
     }
 }

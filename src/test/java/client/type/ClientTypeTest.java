@@ -1,40 +1,34 @@
 package client.type;
 
 
-import org.junit.Before;
 import org.junit.Test;
 
-import static junit.framework.TestCase.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 
 public class ClientTypeTest  {
-    ClientType clientType;
-
-
-
-
-    @Before
-    public void setUp() throws Exception {
-        this.clientType = new ClientType();
-
-    }
 
 
     @Test
-    public void returnRegularTypeClient() {
-        clientType.insertTypeClient("Regular");
-        assertTrue(clientType.returnCustomer());
-
+    public void returnsTrueWhenRegularClientIsPassed() throws Exception {
+        assertThat(ClientType.isRewardsClient("REWARDS"), is(true));
     }
-
 
     @Test
-    public void returnPremiumTypeClient() {
-        clientType.insertTypeClient("Premium");
-        assertFalse(clientType.returnCustomer());
+    public void returnsFalseWhenRegularClientIsPassed() throws Exception {
+        assertThat(ClientType.isRewardsClient("REGULAR"), is(false));
+    }
+
+    @Test
+    public void getsRewardsClient() throws Exception {
+        assertThat(ClientType.getByType("REWARDS"), is(ClientType.REWARDS));
 
     }
 
+    @Test
+    public void getsRegularsClient() throws Exception {
+        assertThat(ClientType.getByType("REGULAR"), is(ClientType.REGULAR));
 
     }
+}

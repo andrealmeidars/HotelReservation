@@ -19,18 +19,18 @@ public class PrinterTest{
 
     }
 
-    @Test
-    public void printTest() {
-        PrintStream originalOut = System.out;
-        OutputStream os = new ByteArrayOutputStream();
-        PrintStream ps = new PrintStream(os);
-        System.setOut(ps);
-
-        printer.printer("Hello Word");
-        assertEquals("Hello Word", os.toString());
-        System.setOut(originalOut);
-
-
-    }
+//    @Test
+//    public void printTest() {
+//        PrintStream originalOut = System.out;
+//        OutputStream os = new ByteArrayOutputStream();
+//        PrintStream ps = new PrintStream(os);
+//        System.setOut(ps);
+//
+//        printer.printer("Hello Word");
+//        assertEquals("Hello Word", os.toString());
+//        System.setOut(originalOut);
+//
+//
+//    }
 
 }
