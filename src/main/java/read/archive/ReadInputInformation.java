@@ -1,6 +1,8 @@
 package read.archive;
 
 
+import txt.endress.TxtEndressFile;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,32 +12,23 @@ import java.util.List;
 
 
 public class ReadInputInformation {
-    private String END_FILE = "src/main/java/file/file.txt";
-    private String inPutReservation;
-    private String clientType;
-    List<String> days = new ArrayList<>();
+    private TxtEndressFile endressFile = new TxtEndressFile();
+    private List<String> inputArray = new ArrayList<>();
 
 
-    public void readFileReservation() {
+    public List<String> readFileReservation() {
 
 
-      try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(END_FILE));
-            StringBuilder stringBuilder = new StringBuilder();
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(endressFile.getEndress()));
             String line = bufferedReader.readLine();
             while (line != null) {
-                line = line.trim();
-                stringBuilder.append(line);
                 line = bufferedReader.readLine();
+                this.inputArray.add(line);
 
             }
-            inPutReservation = stringBuilder.toString();
 
-          bufferedReader.close();
-          reservationInputClient();
-          reservationInputDates();
-
-
+            bufferedReader.close();
 
         } catch (FileNotFoundException ex) {
             System.out.println("file not found");
@@ -43,37 +36,8 @@ public class ReadInputInformation {
             System.out.println("Error  I/O");
         }
 
-   }
-
-
-    private void reservationInputClient(){
-        this.clientType = inPutReservation.substring(0, 7);
-
-     }
-
-    private void reservationInputDates(){
-        String inputReservation = inPutReservation;
-
-
-        for (int i = 0; i < inputReservation.length() - 1; i++) {
-
-            int indexIn = inputReservation.indexOf("(");
-            int indexOut = inputReservation.indexOf(")");
-
-            String day = inputReservation.substring(indexIn + 1, indexOut);
-            inputReservation = inputReservation.substring(indexOut + 1);
-
-            days.add(day);
-
-        }
-
+        return inputArray;
     }
 
-    public String getClientType() {
-        return clientType;
-    }
 
-    public List<String> getDays() {
-        return days;
-    }
 }
