@@ -16,11 +16,13 @@ public class SearchCheapestHotel {
 
 
 
+
     public void searchHotel(List<String> arrayOfInput){
+
 
         for (int i = 0; i < arrayOfInput.size() - 1; i++){
 
-            String inputArrayAtIndex = arrayOfInput.get(i);
+            String inputArrayAtIndex = getDataOfInput(arrayOfInput, i);
 
             ClientType clientType = getClientTypeFromInput(inputArrayAtIndex);
             List<String> requestedDays = getDatesFromInput(inputArrayAtIndex);
@@ -31,6 +33,10 @@ public class SearchCheapestHotel {
 
        }
 
+    }
+
+    private String getDataOfInput(List<String> arrayOfInput, int index) {
+        return  arrayOfInput.get(index);
     }
 
 

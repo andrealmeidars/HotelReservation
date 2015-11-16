@@ -5,30 +5,26 @@ import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 
 public class ClientTypeTest  {
 
 
-    @Test
-    public void returnsTrueWhenRegularClientIsPassed() throws Exception {
-        assertThat(ClientType.isRewardsClient("REWARDS"), is(true));
-    }
+
+
 
     @Test
-    public void returnsFalseWhenRegularClientIsPassed() throws Exception {
-        assertThat(ClientType.isRewardsClient("REGULAR"), is(false));
-    }
-
-    @Test
-    public void getsRewardsClient() throws Exception {
-        assertThat(ClientType.getByType("REWARDS"), is(ClientType.REWARDS));
+    public void showIfClientIsRegular(){
+        assertThat(ClientType.getByType("REGULAR"), is (ClientType.REGULAR));
 
     }
 
     @Test
-    public void getsRegularsClient() throws Exception {
-        assertThat(ClientType.getByType("REGULAR"), is(ClientType.REGULAR));
+    public void showIfClientIsRewards(){
+        assertThat(ClientType.getByType("REWARDS"), is (ClientType.REWARDS));
 
     }
+
+
 }

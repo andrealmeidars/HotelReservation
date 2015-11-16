@@ -9,25 +9,25 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-public class WeekPeriodTest{
-    WeekPeriod weekPeriod;
+public class WeekendDayTest {
+    WeekendDay weekendDay;
 
     @Before
     public void setUp() throws Exception {
-        this.weekPeriod = new WeekPeriod();
+        this.weekendDay = new WeekendDay();
 
     }
 
     @Test
     public void showInfoWeekendSendSat(){
 
-        assertTrue(weekPeriod.isWeekend("sat"));
+        assertTrue(weekendDay.isWeekend("sat"));
 
     }
 
     @Test
     public void showInfoWeekSendMon(){
-        assertFalse(weekPeriod.isWeekend("mon"));
+        assertFalse(weekendDay.isWeekend("mon"));
 
     }
 

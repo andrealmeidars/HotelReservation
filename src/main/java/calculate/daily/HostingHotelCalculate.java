@@ -4,7 +4,6 @@ package calculate.daily;
 import client.type.ClientType;
 import hotel.Hotel;
 import hotel.HotelList;
-import hotel.HotelResource;
 
 import java.util.List;
 

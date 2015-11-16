@@ -1,7 +1,7 @@
 package week.period;
 
 
-public class WeekPeriod {
+public class WeekendDay {
      public boolean isWeekend(String day){
 
           if (day.equals("sat") || day.equals("sun")){

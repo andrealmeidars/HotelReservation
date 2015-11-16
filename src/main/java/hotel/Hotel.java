@@ -3,7 +3,7 @@ package hotel;
 
 import client.type.ClientType;
 import tiny.types.Fares;
-import week.period.WeekPeriod;
+import week.period.WeekendDay;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ public class Hotel {
     private int rates;
     private Fares regularClientFares;
     private Fares rewardsClientFares;
-    private WeekPeriod weekPeriod;
+    private WeekendDay weekendDay;
 
 
     public Hotel(String name, int rates, Fares regularClientFares, Fares rewardsClientFares) {
@@ -20,7 +20,7 @@ public class Hotel {
         this.rates = rates;
         this.regularClientFares = regularClientFares;
         this.rewardsClientFares = rewardsClientFares;
-        this.weekPeriod = new WeekPeriod();
+        this.weekendDay = new WeekendDay();
     }
 
 
@@ -53,7 +53,7 @@ public class Hotel {
     public double returnRegularHostingDayValue(String day) {
         double hostingValue;
 
-        if (weekPeriod.isWeekend(day)) {
+        if (weekendDay.isWeekend(day)) {
             hostingValue = getDailyRegularHotelWeekendValue();
         } else
             hostingValue = getDailyRegularHotelWeekValue();
@@ -65,7 +65,7 @@ public class Hotel {
     public double returnRewardsHostingDayValue(String day) {
         double hostingValue;
 
-        if (weekPeriod.isWeekend(day)) {
+        if (weekendDay.isWeekend(day)) {
             hostingValue = getDailyRewardsHotelWeekendValue();
         } else
             hostingValue = getDailyRewardsHotelWeekValue();
@@ -81,12 +81,11 @@ public class Hotel {
 
         for (String hostingDay : days) {
 
-            if (clientType.isRegular()) {
+            if (clientType.equals(clientType.REGULAR)) {
                 hostingValue += returnRegularHostingDayValue(hostingDay);
 
             } else {
                 hostingValue += returnRewardsHostingDayValue(hostingDay);
-
             }
         }
 
