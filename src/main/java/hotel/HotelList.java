@@ -1,24 +1,25 @@
 package hotel;
 
 
-import tiny.types.DailyRatePremiumHotelValue;
-import tiny.types.DailyRateRegularHotelValue;
+import tiny.types.Fares;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HotelList {
-    public static List<Hotel> getHotelList(){
+public class HotelList implements HotelResource {
+
+    @Override
+    public List<Hotel> getAll() {
         List<Hotel> hotels = new ArrayList<>();
 
         Hotel Lakewood = new Hotel("Lakewood", 3,
-                new DailyRateRegularHotelValue(110, 90), new DailyRatePremiumHotelValue(80,80));
+                new Fares(110, 90), new Fares(80, 80));
 
         Hotel Bridgewood = new Hotel("Bridgewood", 4,
-                new DailyRateRegularHotelValue(160, 60), new DailyRatePremiumHotelValue(110,50));
+                new Fares(160, 60), new Fares(110, 50));
 
         Hotel Ridgewood = new Hotel("Ridgewood", 5,
-                new DailyRateRegularHotelValue(220, 150), new DailyRatePremiumHotelValue(100,40));
+                new Fares(220, 150), new Fares(100, 40));
 
 
         hotels.add(Lakewood);
@@ -27,7 +28,5 @@ public class HotelList {
 
         return hotels;
     }
-
-
 
 }
